@@ -1,3 +1,5 @@
+#!/bin/bash
+
 rm *.md.html
 rm *.pdf
 
