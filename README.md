@@ -5,3 +5,6 @@ This course is taught via [GitHub](http://github.com/training/online), [No Fluff
 
 ## Script
 "The Git Workshop Student Instructions" file is meant as both a shortcut guide to the common workflows of Git as well as a series of steps you can copy-and-paste from to follow along as Matthew presents the class materials.
+
+## Other Git Links
+If you want to explore Git to a maximum depth, I recommend [Scott Chacon's free Git ebook, ProGit](http://progit.org/). I also curate a series of [Git links via Delicious bookmarks](http://www.delicious.com/matthew.mccullough/git).
