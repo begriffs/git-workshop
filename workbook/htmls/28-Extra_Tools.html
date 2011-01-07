@@ -69,18 +69,54 @@
 
 <p><a href="https://github.com/defunkt/hub">Hub is a set of scripts</a> that offer GitHub specific shortcuts to Git. These scripts can be invoked via the command <code>hub</code> or mapped on to the normal <code>git</code> command via a Git alias. In the second situation, all normal Git commands are passed through to the regular <code>git</code> command.</p>
 
+<p>Typically, GitHub configuration is globally set via <code>git config --global github.user "yourusername"</code> and <code>git config --global github.token "tokenvalue"</code> such that the <code>hub</code> command knows what user to act on behalf of.</p>
+
 <ul>
-<li><code>hub clone</code></li>
-<li><code>hub remote add</code></li>
-<li><code>hub fetch</code></li>
-<li><code>hub cherry-pick</code></li>
-<li><code>hub fork</code></li>
-<li><code>hub create</code></li>
-<li><code>hub init</code></li>
-<li><code>hub push</code></li>
-<li><code>hub browse</code></li>
+<li><code>hub clone</code>
+<ul>
+<li>Clone from github, assuming the current user set in the git configuration under the github.user node.</li>
+</ul></li>
+<li><code>hub remote add</code>
+<ul>
+<li>Add a remote to the current project name under a different username (e.g. a fork).</li>
+</ul></li>
+<li><code>hub fetch</code>
+<ul>
+<li>Retrieve the contents of one or more forks of the current projects under the provided comma separated usernames.</li>
+</ul></li>
+<li><code>hub cherry-pick USERNAME@SHA</code>
+<ul>
+<li>Cherry-pick the contents of a given SHA under a given username, even if it has never been added as a remote or fetched before.</li>
+</ul></li>
+<li><code>hub fork</code>
+<ul>
+<li>Fork the current project under your username</li>
+</ul></li>
+<li><code>hub create</code>
+<ul>
+<li>Create a new project on GitHub</li>
+</ul></li>
+<li><code>hub init</code>
+<ul>
+<li>Initialize a new project and add it to GitHub</li>
+</ul></li>
+<li><code>hub push</code>
+<ul>
+<li>Push a repo to a comma separated list of remotes and/or usernames</li>
+</ul></li>
+<li><code>hub browse</code>
+<ul>
+<li>Open the web page corresponding to the current repo.</li>
+</ul></li>
 <li><code>hub compare</code></li>
-<li><code>hub submodule</code></li>
+<li><code>hub compare TAG1..TAG2</code>
+<ul>
+<li>Open the web UI to compare branches or SHAs within the current repo.</li>
+</ul></li>
+<li><code>hub submodule</code>
+<ul>
+<li>Add a submodule from a GitHub project, assuming the local GitHub username</li>
+</ul></li>
 <li><code>hub help</code></li>
 </ul>
 
@@ -91,8 +127,20 @@
 <p><a href="http://git-wt-commit.rubyforge.org/">William maintains a set of scripts</a> that offer visualizations into the history of a Git repository.</p>
 
 <ul>
-<li><code>git-wtf</code> understand the current state of your git repository.</li>
-<li><code>git-publish-branch</code> publish a branch to a remote repository.</li>
-<li><code>git-rank-contributors</code> rank all authors by patch size.</li>
-<li><code>git-show-merges</code> show which branches are merged into the current branch.</li>
+<li><code>git-wtf</code>
+<ul>
+<li>Visualize the current state of your git repository.</li>
+</ul></li>
+<li><code>git-publish-branch</code>
+<ul>
+<li>Publish a branch to a remote repository and set up tracking with <code>--set-upstream</code></li>
+</ul></li>
+<li><code>git-rank-contributors</code>
+<ul>
+<li>Rank all authors by patch size.</li>
+</ul></li>
+<li><code>git-show-merges</code>
+<ul>
+<li>Show which branches are merged into the current branch.</li>
+</ul></li>
 </ul>
