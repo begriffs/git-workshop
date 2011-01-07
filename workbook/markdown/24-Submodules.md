@@ -1,7 +1,7 @@
 # Submodules
 
 ## Creating Submodules
-This is the equivalent to SVN externals. Submodules are subdirectories of a Git project that point to another Git project.
+This is the equivalent to SVN externals. [Submodules are subdirectories of a Git project that point to another Git project](http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html).
 
 Starting in an existing Git repository, add a submodule.
 
