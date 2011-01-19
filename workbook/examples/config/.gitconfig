@@ -1,0 +1,70 @@
+[user]
+	name = Fird Birfle
+	email = fird@birfle.com
+
+[color]
+# ui = true is a superset of all the more specific color options
+#  as documented at http://book.git-scm.com/5_customizing_git.html
+# When set to always, always use colors in all git commands which are capable of colored output.
+# When false, never. When set to true or auto, use colors only when the output is to the terminal.
+# When more specific variables of color.* are set, they always take precedence over this setting.
+# Defaults to false.
+	ui = auto
+#	diff = auto
+#	status = auto
+#	branch = auto
+
+[gui]
+	fontdiff = -family Monaco -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+
+[github]
+# For GitNub and Gitx (non SSH tools)
+# https://github.com/blog/180-local-github-config
+	user = YOURUSERNAME
+	token = f52j3j2k3j3
+
+[core]
+	excludesfile = /users/yourusername/.gitignore
+	quotepath = false
+	autocrlf = input
+#	editor = emacs
+
+[alias]
+	br = branch -a
+	s = status
+	cl = clone
+	c = commit
+	co = checkout
+	d = diff
+	dh = diff HEAD
+	dc = diff --staged
+	dw = diff --word-diff
+	dcw = diff --color-words
+	dm = !git diff | mate
+	dv = !git diff | vim
+	who = shortlog -s --
+	ph = push
+	pl = pull
+	lp = log -p
+	lod = log --oneline --decorate
+	lg = log --graph
+	lpo = log --pretty=oneline --abbrev-commit --graph --decorate
+	spull = !git-svn fetch && git-svn rebase
+	spush = !git-svn dcommit
+	sync = !git pull && git push
+	lf = log --pretty=fuller
+
+[apply]
+	whitespace = nowarn
+[rerere]
+	enabled = 1
+
+[diff]
+	tool = araxis
+[difftool]
+	prompt = false
+
+[merge]
+	tool = araxis
+[mergetool]
+	prompt = false
