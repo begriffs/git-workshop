@@ -18,6 +18,7 @@ This is a destructive command and thus we need to clone the repository before we
 
 Since git can optimize local-disk clones of repositories with hardlinks, we want to create a clone that is entirely separate from the original one:
 
+
     git clone --no-hardlinks /path/to/originalrepo newrepo
 
 
@@ -26,6 +27,7 @@ Since git can optimize local-disk clones of repositories with hardlinks, we want
 ### With a Subdirectory
 
 If we wish to only save the files in the `c` directory while purging all branches, we can run the following command. Oddly lightweight tags are kept here. This _relocates_ all files in the `c` subfolder to the _root_ of the new repository. This is usually not what we want. Users typically want to specify what to prune away, leaving all other folder structures intact.
+
 
     git filter-branch --subdirectory-filter c HEAD
 
@@ -36,7 +38,8 @@ The same command can have an additional option to keep all the branches.
 * the `--all` rewrites all branches and tags
 * the `--prune-empty` removes commits that would no longer have any content
 
-    git filter-branch --prune-empty --subdirectory-filter c HEAD -- --all
+
+`git filter-branch --prune-empty --subdirectory-filter c HEAD -- --all`
 
 
 ### With the Tree and Checkouts
@@ -46,7 +49,8 @@ Alternatively, we can use a tree filter which _prunes away_ the selected folder 
 * `-f` force the `rm` or else commits where that file didn't exist would fail on the shell command.
 * `--prune-empty` removes any commits that have no files (blank, empty) after the shell command performs its surgery.
 
-    git filter-branch --tree-filter "rm -rf c" --prune-empty HEAD
+
+`git filter-branch --tree-filter "rm -rf c" --prune-empty HEAD`
 
 
 ### With the Index
@@ -56,14 +60,16 @@ A variation on this is the `--index-filter` which is much faster. It only operat
 * `--cached` is supplied to leave untracked files alone. Only operate on tracked files.
 * `--ignore-unmatch` is supplied to allow the command to always succeed for every commit, even if the file didn't exist.
 
-    git filter-branch --index-filter "git rm -r -f --cached --ignore-unmatch c" --prune-empty HEAD
+
+`git filter-branch --index-filter "git rm -r -f --cached --ignore-unmatch c" --prune-empty HEAD`
 
 
 And this variation that adds the `--tag-name-filter` and `-- --all` which keeps the `.git/refs/heads/original/refs/tags` folder, keeps all references to the original tags in the `/git/info/refs` file, and re-writes the tag to `.git/refs/tags/AGOODPOINT` and `.git/refs/heads/addingonefile` branch.
 
 * `--tag-name-filter cat` re-writes all tags
 
-    git filter-branch --index-filter "git rm -r -f --cached --ignore-unmatch c" --prune-empty --tag-name-filter cat -- --all
+
+`git filter-branch --index-filter "git rm -r -f --cached --ignore-unmatch c" --prune-empty --tag-name-filter cat -- --all`
 
 
 ## Cleanup
@@ -72,7 +78,7 @@ And this variation that adds the `--tag-name-filter` and `-- --all` which keeps 
 
 Many of the `filter-branch` invocations will create a `.git/refs/original` folder to allow for a restore after a `filter-branch` execution. These are still first class references and will cause the objects to be retained. If you have reviewed the results of the filter and are satisfied with the result, remove these refs so that the objects can be cleaned up in the next steps.
 
-    git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
+`git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d`
 
 
 ### Expire all entries from the reflog
@@ -101,5 +107,5 @@ Garbage collect any orphaned entries. From the git-gc man page, please note that
 
 * `--prune=now` Prune all unreachable (orphaned) objects from the DAG without a separate invocation of prune
 
-    git gc --aggressive --prune=now
+`git gc --aggressive --prune=now`
     

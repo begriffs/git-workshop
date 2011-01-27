@@ -37,10 +37,10 @@
 <ul>
 <li>the <code>--</code> separates filter-branch options from revision options</li>
 <li>the <code>--all</code> rewrites all branches and tags</li>
-<li><p>the <code>--prune-empty</code> removes commits that would no longer have any content</p>
-
-<p>git filter-branch --prune-empty --subdirectory-filter c HEAD -- --all</p></li>
+<li>the <code>--prune-empty</code> removes commits that would no longer have any content</li>
 </ul>
+
+<p><code>git filter-branch --prune-empty --subdirectory-filter c HEAD -- --all</code></p>
 
 <h3>With the Tree and Checkouts</h3>
 
@@ -48,10 +48,10 @@
 
 <ul>
 <li><code>-f</code> force the <code>rm</code> or else commits where that file didn't exist would fail on the shell command.</li>
-<li><p><code>--prune-empty</code> removes any commits that have no files (blank, empty) after the shell command performs its surgery.</p>
-
-<p>git filter-branch --tree-filter "rm -rf c" --prune-empty HEAD</p></li>
+<li><code>--prune-empty</code> removes any commits that have no files (blank, empty) after the shell command performs its surgery.</li>
 </ul>
+
+<p><code>git filter-branch --tree-filter "rm -rf c" --prune-empty HEAD</code></p>
 
 <h3>With the Index</h3>
 
@@ -59,18 +59,18 @@
 
 <ul>
 <li><code>--cached</code> is supplied to leave untracked files alone. Only operate on tracked files.</li>
-<li><p><code>--ignore-unmatch</code> is supplied to allow the command to always succeed for every commit, even if the file didn't exist.</p>
-
-<p>git filter-branch --index-filter "git rm -r -f --cached --ignore-unmatch c" --prune-empty HEAD</p></li>
+<li><code>--ignore-unmatch</code> is supplied to allow the command to always succeed for every commit, even if the file didn't exist.</li>
 </ul>
+
+<p><code>git filter-branch --index-filter "git rm -r -f --cached --ignore-unmatch c" --prune-empty HEAD</code></p>
 
 <p>And this variation that adds the <code>--tag-name-filter</code> and <code>-- --all</code> which keeps the <code>.git/refs/heads/original/refs/tags</code> folder, keeps all references to the original tags in the <code>/git/info/refs</code> file, and re-writes the tag to <code>.git/refs/tags/AGOODPOINT</code> and <code>.git/refs/heads/addingonefile</code> branch.</p>
 
 <ul>
-<li><p><code>--tag-name-filter cat</code> re-writes all tags</p>
-
-<p>git filter-branch --index-filter "git rm -r -f --cached --ignore-unmatch c" --prune-empty --tag-name-filter cat -- --all</p></li>
+<li><code>--tag-name-filter cat</code> re-writes all tags</li>
 </ul>
+
+<p><code>git filter-branch --index-filter "git rm -r -f --cached --ignore-unmatch c" --prune-empty --tag-name-filter cat -- --all</code></p>
 
 <h2>Cleanup</h2>
 
@@ -78,8 +78,7 @@
 
 <p>Many of the <code>filter-branch</code> invocations will create a <code>.git/refs/original</code> folder to allow for a restore after a <code>filter-branch</code> execution. These are still first class references and will cause the objects to be retained. If you have reviewed the results of the filter and are satisfied with the result, remove these refs so that the objects can be cleaned up in the next steps.</p>
 
-<pre><code>git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
-</code></pre>
+<p><code>git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d</code></p>
 
 <h3>Expire all entries from the reflog</h3>
 
