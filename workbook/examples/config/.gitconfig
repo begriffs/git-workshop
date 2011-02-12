@@ -1,6 +1,6 @@
 [user]
-	name = Fird Birfle
-	email = fird@birfle.com
+	name = YOURNAMEHERE
+	email = YOUREMAILADDRESSHERE
 
 [color]
 # ui = true is a superset of all the more specific color options
@@ -20,11 +20,11 @@
 [github]
 # For GitNub and Gitx (non SSH tools)
 # https://github.com/blog/180-local-github-config
-	user = YOURUSERNAME
-	token = f52j3j2k3j3
+	user = YOURUSERNAMEHERE
+	token = YOURTOKENHERE
 
 [core]
-	excludesfile = /users/yourusername/.gitignore
+	excludesfile = /users/YOURUSERNAMEHERE/.gitignore
 	quotepath = false
 	autocrlf = input
 #	editor = emacs
@@ -53,6 +53,17 @@
 	spush = !git-svn dcommit
 	sync = !git pull && git push
 	lf = log --pretty=fuller
+	ignorechanges = update-index --assume-unchanged
+	noticechanges = update-index --no-assume-unchanged
+	gcap = gc --aggressive --prune
+	listconf = config --global --list
+	st = status
+    # newrepodoesntwork = !echo git init $1 && echo cd $1
+    # newrepo = !sh -c 'git init $1; echo hi' -
+    # newrepoalt = "!f() { git init $1}; f"
+    # testme = "!bash -c 'git init $0'"
+    # testme2 = !echo cd $1
+    # testme3 = "!function gitme() { git init $1; echo now cd to $1; }; gitme"
 
 [apply]
 	whitespace = nowarn
@@ -60,11 +71,16 @@
 	enabled = 1
 
 [diff]
-	tool = araxis
+	tool = myaraxis
 [difftool]
 	prompt = false
+[difftool "myaraxis"]
+	cmd = araxisgitdiff ONE "$LOCAL" THREE FOUR "$REMOTE"
 
 [merge]
-	tool = araxis
+	tool = myaraxis
 [mergetool]
 	prompt = false
+	keepBackup = false
+[mergetool "myaraxis"]
+	cmd = araxisgitmerge "$PWD/$REMOTE" "$PWD/$BASE" "$PWD/$LOCAL" "$PWD/$MERGED"
