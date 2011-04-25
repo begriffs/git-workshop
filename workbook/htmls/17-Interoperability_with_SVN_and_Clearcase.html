@@ -2,22 +2,32 @@
 
 <h2>SVN</h2>
 
-<p>Clone one part (branch, folder, tree) of a Subversion repository
-    git svn clone URL</p>
+<p>Clone one part (branch, folder, tree) of a Subversion repository</p>
 
-<p>Clone an entire SVN repo with tags, trunks, and branches
-    git svn clone --stdlayout URL
-    git svn clone --stdlayout http://svn.apache.org/repos/asf/commons/proper/logging/
-    git svn clone --stdlayout http://ambientideas.unfuddle.com/svn/ambientideas_sample11-svnscm/</p>
+<pre><code>git svn clone URL
+</code></pre>
 
-<p>or just the trunk
-    git svn clone http://ambientideas.unfuddle.com/svn/ambientideas_sample11-svnscm/trunk</p>
+<p>Clone an entire SVN repo with tags, trunks, and branches</p>
 
-<p>Get new commits from Subversion
-    git svn rebase</p>
+<pre><code>git svn clone --stdlayout URL
+git svn clone --stdlayout http://svn.apache.org/repos/asf/commons/proper/logging/
+git svn clone --stdlayout http://ambientideas.unfuddle.com/svn/ambientideas_sample11-svnscm/
+</code></pre>
 
-<p>Push Git commits back to Subversion
-    git svn dcommit</p>
+<p>or just the trunk</p>
+
+<pre><code>git svn clone http://ambientideas.unfuddle.com/svn/ambientideas_sample11-svnscm/trunk
+</code></pre>
+
+<p>Get new commits from Subversion</p>
+
+<pre><code>git svn rebase
+</code></pre>
+
+<p>Push Git commits back to Subversion</p>
+
+<pre><code>git svn dcommit
+</code></pre>
 
 <h2>ClearCase</h2>
 
