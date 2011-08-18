@@ -1,0 +1,19 @@
+$light-gray:rgba(255,255,255,0.75) ;
+
+html { background: $git-gray; }
+body { color: #fff; border-left: 10px solid $git-red; padding-left: 15px;
+       font-family: Consolas, Courier New, monospace; @include box-shadow(0 0 4px 0 rgba(0,0,0,0.50) inset);
+       @include background(linear-gradient(top, #444, #222));
+}
+h1 { color: $git-green; }
+h2 { padding-bottom: 3px; border-bottom: 1px dotted $git-gray; color:#ccc; }
+h3 { border-left: 3px solid $git-green; padding: 0 0 0 5px; text-transform:uppercase; }
+
+a{
+    &:link, &:visited, &:hover, &:active { color:$git-green; text-decoration: none;}
+    &:hover {text-decoration: underline;}
+}
+
+code { background: $git-gray; color:$light-gray; @include border-radius(4px); }
+p code { padding: 1px;  display: inline-block; }
+pre code { padding: 5px 5px 5px 10px; border: 1px solid #444; display: block; }
