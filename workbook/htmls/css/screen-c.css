@@ -1,0 +1,11 @@
+html { background: #eee; }
+body { margin: 20px auto; padding: 10px; font-family: helvetica, arial, verdana, sans-serif; width:90%;
+       background: #fff; border: 8px solid #fbfbfb; color: #666}
+h1 { text-transform: lowercase; color: #000; }
+h2 { color:#fff; text-transform: lowercase; padding: 3px 5px; background: #82adbc; }
+h3 { color: #636363; border-bottom: 1px solid #636363; text-transform: lowercase;}
+a:link, a:visited, a:hover, a:active { color:#4183C4; text-decoration: none}
+a:hover { color: #0080ff }
+
+p code { padding: 1px; background: #FBFBFB; display: inline-block; color:#000; }
+pre code { padding: 5px; border-left: 1px solid #ddd; border-bottom: 1px solid #ddd; background: #FBFBFB; display: block; color:#000; }
