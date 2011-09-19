@@ -2,7 +2,7 @@ Git Advanced
 
 Many Git workshops successfully focus on the basics for those new to DVCS. However, with Git having a full 5 years on the street now, there is a growing desire to address the maturing users of this innovative DVCS. This workshop will take existing Git users and bring them to a heightened level of productivity by leveraging Git’s powerful, yet underused “advanced” features.
 
-Highlights of this workshop include:
+https://github.com/matthewmccullough/git-workshop
 
 * Studying team-collaboration techniques with Git.
 ** http://blog.springsource.com/2010/12/21/git-and-social-coding-how-to-merge-without-fear/
@@ -34,6 +34,9 @@ Highlights of this workshop include:
 ** Rebase branches
 *** git config --local branch.autosetuprebase "always"
 *** git pull --rebase
+** Portable commits
+*** Bundles
+*** git bundle create master mymaster.bundle
 
 * Cherry picking bug fixes and other nuggets of code in both linear and rebase workflows.
 ** Cherry pick from customer branch
@@ -45,6 +48,8 @@ Highlights of this workshop include:
 * Building custom commands via aliases and shell scripts.
 ** gc_recursive
 ** finddirtygit
+** servehere
+*** git daemon --export-all --base-path=. --enable=receive-pack
 
 * Undoing and redoing almost anything via revert, reset, reflog and stash.
 ** Revert
@@ -64,6 +69,7 @@ Highlights of this workshop include:
 *** git log --grep "<PATTERN>"
 *** git log --follow FILENAME
 *** git log --follow REF:FILENAME
+*** git log -p -S "option = options[0];" --diff-filter=D
 ** Listing specifics
 *** Untracked files:
 *** git ls-files . --exclude-standard --others
