@@ -1,0 +1,14 @@
+Binaries for git are on the NFJS USB stick in the git workshop folder
+
+* Create repos
+* Commit some code
+* Select invidual files
+* Wild card staging
+* Select by line
+* History
+* Maintainance
+* Merges
+* Rebase
+* Re-writing history amends, rebase, rebase -i
+
+https://github.com/matthewmccullough/git-workshop

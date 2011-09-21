@@ -50,6 +50,7 @@ https://github.com/matthewmccullough/git-workshop
 ** finddirtygit
 ** servehere
 *** git daemon --export-all --base-path=. --enable=receive-pack
+*** git fetch git://
 
 * Undoing and redoing almost anything via revert, reset, reflog and stash.
 ** Revert

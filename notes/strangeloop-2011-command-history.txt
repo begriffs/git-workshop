@@ -1,0 +1,214 @@
+10010  git --version
+10012  git config --list
+10013  git config --list | more
+10014  git config --global user.name  "Matthew McCullough"
+10015  git config --global user.email "matthewm@ambientideas.com
+10016  git config --global user.email "matthewm@ambientideas.com"
+10017  git config --global color.ui "auto"
+10018  mate ~/.gitconfig
+10020  git init project1
+10021  cd project1
+10022  ls
+10023  ls -al
+10024  open .git
+10025  echo //Test >> first.groovy
+10026  ls
+10027  git status
+10028  git add .
+10029  git status
+10030  git commit -m"My first commit"
+10031  git cat-file -t 20138b4
+10032  git cat-file -p 20138b4
+10033  git cat-file -t 3e1a99cb53f29430f7e9ce3e45f2a51d8600ad03
+10034  git cat-file -p 3e1a99cb53f29430f7e9ce3e45f2a51d8600ad03
+10035  git cat-file -p 49ace2
+10036  git rev-parse 49ace2
+10037  git status
+10038  vim first.groovy
+10039  git status
+10040  git commit -a -m"My second commit"
+10041  vim first.groovy
+10042  git diff
+10043  git diff --color-words
+10044  git add -p .
+10045  git status
+10046  git diff
+10047  git diff --staged
+10048  git diff HEAD
+10049  git rev-parse HEAD
+10050  git rev-parse master
+10051  cat .git/HEAD
+10052  cat .git/refs/heads/master
+10053  git branch feature1
+10054  git checkout feature1
+10055  git rev-parse HEAD
+10056  git status
+10057  git checkout master
+10058  git commit -m"Part 1"
+10059  git commit -a -m"Part 2"
+10060  git statuus
+10061  git log
+10062  git help log
+10063  git log --stat
+10064  git log -p
+10065  git log --graph --pretty=oneline --decorate --abbrev-commit
+10066  git config --global alias.stll "log --graph --pretty=oneline --decorate --abbrev-commit"
+10067  git stll
+10068  git branch feature1
+10069  git branch -d feature1
+10070  git branch feature1
+10071  git stll
+10072  git checkout -b feature2
+10073  git branch
+10074  git status
+10075  git checkout master
+10076  git checkout feature1
+10077  mkdir stlthousands
+10078  cd stlthousands
+10079  generaterandomfiles.sh 3000 sample txt
+10080  ls
+10081  git add .
+10082  git commit -m"Three thousand"
+10083  cd ..
+10084  ls
+10085  git checkout master
+10086  git checkout feature1
+10087  git checkout master
+10088  ls
+10089  git checkout feature1
+10090  ls
+10091  vim second.groovy
+10092  git add .
+10093  git commit -m"New file on feature branch"
+10094  git status
+10095  git checkout master
+10096  vim third.groovy 
+10097  git add .
+10098  git commit -m"On master branch"
+10099  git stll
+10100  git stll --all
+10101  mate ~/.gitconfig
+10102  git merge feature1
+10103  git log -1
+10104  git log -2
+10105  ls
+10106  git stll 
+10107  gitk&
+10108  git branch feature3
+10109  ls
+10110  vim first.groovy
+10111  git commit -a -m"Main wants it this way"
+10112  git checkout feature3
+10113  vim first.groovy
+10114  git commit -a -m"Feature3 wants it this way"
+10115  git checkout master
+10116  git stll
+10117  git stll --al
+10118  git stll --all
+10119  git merge feature3
+10120  git status
+10121  git diff
+10122  git mergetool
+10123  git status
+10124  vim first.groovy
+10125  git add first.groovy
+10126  git commit 
+10127  cd ..
+10128  git clone https://github.com/matthewmccullough/hellogitworld
+10129  ls
+10130  cd hellogitworld
+10131  git branch
+10132  git branch -a
+10133  git checkout remotes/origin/feature_image
+10134  git checkout master
+10135  git checkout feature_subtraction_polished
+10136  git branch -a
+10137  git checkout feature_division_polished
+10138  git branch
+10139  mkdir thousands
+10140  cd thousands
+10141  generaterandomfiles.sh 2000 sample txt
+10142  git add .
+10143  git commit -m"Thousands"
+10144  git push
+10145  git fetch
+10146  git branch -a
+10147  git log remotes/origin/feature_division_polished -1
+10148  git remote 
+10149  git remote  -a
+10150  git remote  -v
+10151  git remote add brian git://github.com/matthewmccullough/hellogitworld.git
+10152  git fetch brian
+10153  git branch -a
+10154  git rev-parse remotes/brian/feature_division
+10155  git rev-parse remotes/origin/feature_division
+10156  git checkout feature_division_polished
+10157  cd ..
+10158  mkdir twothousand
+10159  cd twothousand
+10160  generaterandomfiles.sh 2000 more txt
+10161  git add .
+10162  git commit -m"More"
+10163  git push
+10164  git diff feature_division_polished remotes/origin/feature_division_polished
+10165  cd ..
+10166  ls
+10167  which git-serve-here.sh
+10168  cat /Users/mccm06/.shellsconfig/scripts/git-serve-here.sh
+10169  git daemon --export-all --base-path=. --enable=receive-pack
+10170  to.scratch
+10171  git clone git://10.0.1.9/hellogitworld hgw2
+10172  cd hgw2
+10173  cd ..
+10174  cd stl-git1basics
+10175  ls
+10176  cd hellogitworld
+10177  git checkout -b junk2
+10178  cd ..
+10179  cd hgw2
+10180  git checkout master
+10181  ls
+10182  vim matthewm.txt
+10183  git add .
+10184  git commit -m"Matthew"
+10185  git push
+10186  git pull
+10187  git push
+10188  git pull
+10189  git push
+10190  git pull
+10191  git pull && git push
+10192  git stll
+10193  git pull
+10194  git stll
+10195  vim matthewm.txt
+10196  git commit -a -m"Another from matthew"
+10197  git push
+10198  git pull --rebase
+10199  git pull
+10200  git pull --rebase
+10201  git push
+10202  git pull
+10203  git pull --rebase
+10204  git stll
+10205  open .git 
+10206  git gc
+10207  git checkout -b matthewm
+10208  vim matthewm.txt
+10209  git commit -a -m"First change"
+10210  vim matthewm.txt
+10211  git commit -a -m"Second change"
+10212  vim matthewm.txt
+10213  git commit -a -m"Third change"
+10214  vim matthewm.txt
+10215  git commit -a -m"Fourth change"
+10216  git stll
+10217  git rebase -i master
+10218  git status
+10219  git log -2
+10220  git rebase -i master
+10221  git reflog
+10222  git reset --hard dd3ad0d
+10223  git log -2
+10224  git reset --hard 0ac8ac8
+10225  git gc --prune=now
