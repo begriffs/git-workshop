@@ -1,0 +1,16 @@
+html { background: #f6f6f6; }
+body { background:#eee; border-bottom: 5px solid $git-red; @include border-radius(12px); }
+h1 { background: $git-gray; color:#fff; padding: 5px 10px; @include border-radius(8px); @include text-shadow(rgba(black, 0.25) 2px 2px 0);}
+h2 { color:$git-gray; border-bottom: 3px solid $git-red; padding: 0 0 3px 0;}
+h3 { font-family: Georgia, Times New Roman, serif; }
+a{
+    &:link, &:visited, &:hover, &:active { color:$git-green; text-decoration: none;}
+    &:hover {text-decoration: underline;}
+}
+ul li { list-style-type: square; }
+p {
+    line-height: 150%; color:$git-gray;
+    code { padding: 1px; display: inline-block; }
+}
+pre code { padding: 5px; border: 1px dotted $git-gray; display: block; }
+code { background:#fff; }

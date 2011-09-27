@@ -1,0 +1,11 @@
+body { color: #666; @include border-radius(8px); @include box-shadow(rgba(0,0,0,0.20) 2px 2px 12px); }
+h1 { text-transform: lowercase; color: $git-gray;  }
+h2 { text-transform: lowercase; padding: 3px 5px; color:#fff;
+     @include background(linear-gradient(top, #666, #333)); @include border-radius(4px); }
+h3 { color: #636363; border-bottom: 1px solid #636363; text-transform: lowercase;}
+a:link, a:visited, a:hover, a:active { color:#4183C4; text-decoration: none; }
+a:hover { color: #0080ff; text-decoration: underline; }
+
+code { @include background(linear-gradient(top, #fff, #eee)); color:#000; @include border-radius(8px);}
+p code { padding: 1px; display: inline-block; }
+pre code { padding: 5px 5px 5px 10px; border: 1px solid #ddd; display: block; }

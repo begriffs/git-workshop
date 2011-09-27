@@ -1,0 +1,20 @@
+/* base imports */
+@import "compass";
+@import "html5boilerplate";
+@import "compass/css3";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/images";
+@import "compass/css3/text-shadow";
+
+$git-gray: #606060;
+$git-red: #d53e21;
+$git-green: #2abf4a;
+
+body {
+    margin: 20px auto; padding: 10px; font-family: helvetica, arial, verdana, sans-serif; width:90%;
+}
+
+//@import "a";
+//@import "b";
+@import "c";
