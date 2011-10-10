@@ -1,4 +1,7 @@
-Binaries for git are on the NFJS USB stick in the git workshop folder
+Binaries for git are on the NFJS USB stick in the git workshop folder in a ZIP in a `tools` subfolder
+
+To test your git installation, type:
+  git --version
 
 * Create repos
 * Commit some code
