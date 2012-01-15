@@ -1,0 +1,641 @@
+<p>Git Foundations</p>
+
+<h1>[#C] Class Description</h1>
+
+<ul>
+<li>Distributed version control is all the rage these days, but is it worth it? It has been transformative for the dozens of organizations and thousands of developers that I've mentored on the unique implementation called Git. But don't take my word for it. Discover the joy of a version control system that works for you, not against you, in a hands-on workshop. Bring a Windows, Mac, or Linux laptop and we'll install, set up, use and bend Git into workflows that weren't even possible with the version control systems of yesteryear. Be prepared to rethink how lightweight, fast, and refreshing source code control can be. After completing this workshop you'll be able to do practical work with Git for your day job or weekend OSS hobby.</li>
+</ul>
+
+<h1>[#A] Repo URLs, Links, Setup</h1>
+
+<ul>
+<li>Workshop Materials
+<ul>
+<li>https://github.com/matthewmccullough/git-workshop</li>
+</ul></li>
+<li>Sample Project
+<ul>
+<li>https://github.com/matthewmccullough/hellogitworld</li>
+</ul></li>
+<li>Shell Scripts
+<ul>
+<li>https://github.com/matthewmccullough/scripts</li>
+</ul></li>
+<li>Shell Decorations
+<ul>
+<li>https://github.com/matthewmccullough/MatthewsShellConfig</li>
+</ul></li>
+<li>Cheat Sheet
+<ul>
+<li>http://refcardz.dzone.com/refcardz/getting-started-git</li>
+</ul></li>
+<li>GitHubStudents Temp Account
+<ul>
+<li><code>git clone https://githubstudents:students987@github.com/githubstudents/hellogitworld.git</code></li>
+</ul></li>
+<li>Created a Gist for Notes
+<ul>
+<li>https://gist.github.com/1589518</li>
+</ul></li>
+<li>Office Hours and GitHub Welcome Class
+<ul>
+<li>https://github.com/blog/970-more-github-office-hours-and-welcome-classes</li>
+</ul></li>
+</ul>
+
+<h1>[#B] What is Git?</h1>
+
+<ul>
+<li>Linux origins</li>
+<li>Why a distributed version control system?</li>
+<li>How does Git differ from previous VCS systems?</li>
+</ul>
+
+<h1>[#A] Installing Git</h1>
+
+<ul>
+<li>The 5 minute litmus test</li>
+<li>No systemic intrusions</li>
+<li>Ask for a USB Stick if you need binaries</li>
+</ul>
+
+<h1>[#A] Creating Local Repositories</h1>
+
+<ul>
+<li><code>git init</code>
+<ul>
+<li>On exisiting code or folders</li>
+<li>Legacy repo creation syntax</li>
+</ul></li>
+<li><code>git init &lt;REPONAME&gt;</code>
+<ul>
+<li>For a brand new project</li>
+<li>Recent convenience syntax (1.7 era)</li>
+</ul></li>
+</ul>
+
+<h1>[#A] Configuring Git</h1>
+
+<ul>
+<li>Git Config
+<ul>
+<li>Local</li>
+<li>Global</li>
+<li>System</li>
+</ul></li>
+<li>Your Name
+<ul>
+<li>git config --global user.name "Matthew McCullough"</li>
+</ul></li>
+<li>Your Editor
+<ul>
+<li>git config --global user.email "matthewm@ambientideas.com"</li>
+</ul></li>
+<li>Color
+<ul>
+<li>git config --global color.ui "auto"</li>
+</ul></li>
+</ul>
+
+<h1>[#A] Adding and Commiting Basics</h1>
+
+<ul>
+<li>Add
+<ul>
+<li><code>git add &lt;FILENAME&gt;</code></li>
+<li><code>git add &lt;PATTERN&gt;</code></li>
+<li><code>git add *.html</code></li>
+<li><code>git add src/</code></li>
+<li><code>git add .</code></li>
+<li>Interactive selection of code
+<ul>
+<li><code>git add -p</code></li>
+</ul></li>
+</ul></li>
+<li>Commit
+<ul>
+<li>Making code a permanent part of history</li>
+<li>Writing a commit to the .git/objects directory</li>
+</ul></li>
+</ul>
+
+<h1>[#B] Three Stage Thinking</h1>
+
+<ul>
+<li>Why Git has three trees
+<ul>
+<li>Working Directory (File System)</li>
+<li>Staging Area (Index)</li>
+<li>Repository (Commit History)</li>
+</ul></li>
+<li>Why Git has a staging area
+<ul>
+<li>Shopping cart</li>
+<li>Select, then act</li>
+<li>Durable between work sessions</li>
+</ul></li>
+<li>Why Git cares about content
+<ul>
+<li>Content tracker, not just a file tracker</li>
+<li>Understands line (word) changes</li>
+<li>Similarity index</li>
+<li>Tracks code movement across renames, moves, and refactoring</li>
+</ul></li>
+</ul>
+
+<h1>[#A] Git Hashing Basics</h1>
+
+<ul>
+<li>Hashes
+<ul>
+<li>What is a hash?</li>
+<li>Fingerprint</li>
+<li>Unique content identification</li>
+</ul></li>
+<li>Hash Navigation Language
+<ul>
+<li>Commitish</li>
+<li>Treeish</li>
+</ul></li>
+</ul>
+
+<h1>[#B] DAGs &amp; The Commit Graph</h1>
+
+<ul>
+<li>Graph, with limitations</li>
+<li>Always traveling forward</li>
+<li>No loops</li>
+<li>New elements point to ancestors</li>
+<li>Liked linked lists</li>
+</ul>
+
+<h1>[#A] Treeish, Commitish</h1>
+
+<ul>
+<li>Graph navigation language</li>
+<li>Uses <code>^</code> and <code>~</code> and <code>@{}</code> and <code>...</code> symbols</li>
+<li>Use of subset of hash characters
+<ul>
+<li>40 hex characters</li>
+<li>20 bytes</li>
+<li>160 bits</li>
+<li>Can use as little as 4 characters</li>
+<li>Standard is 7</li>
+</ul></li>
+<li>Two commits ago:
+<ul>
+<li><code>HEAD@{2}</code></li>
+</ul></li>
+<li>Two commits ago:
+<ul>
+<li><code>HEAD^^</code></li>
+</ul></li>
+<li>Two commits ago
+<ul>
+<li><code>HEAD~2</code></li>
+</ul></li>
+<li>Range from the local commits to the remote commits
+<ul>
+<li><code>master..origin/master</code></li>
+</ul></li>
+</ul>
+
+<h1>[#A] More Precise Commit Contents</h1>
+
+<ul>
+<li>Write code, change files
+<ul>
+<li>Separates changing files from commiting files</li>
+<li>Can change more than you intend to commit</li>
+<li>Can group what you changed for your commits</li>
+</ul></li>
+<li>Add only what's ready for consumption
+<ul>
+<li>Don't commit "less than ready" code</li>
+<li>Stash away what you want to restore to pristine state</li>
+</ul></li>
+<li>Commit only a portion of file changes
+<ul>
+<li>Patch mode
+<ul>
+<li>git add -p</li>
+<li>git stash -p</li>
+<li>git reset -p</li>
+</ul></li>
+<li>Stash
+<ul>
+<li>Put "away" entire files not ready for commit</li>
+<li>Multiple stashes, but don't confuse them for real branches</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1>[#A] Cloning</h1>
+
+<ul>
+<li>Hello Git World repo via three addresses
+<ul>
+<li>https://matthewmccullough@github.com/matthewmccullough/hellogitworld.git</li>
+<li>git://github.com/matthewmccullough/hellogitworld.git</li>
+<li>git@github.com:matthewmccullough/hellogitworld.git</li>
+</ul></li>
+<li>Each protocol type has minor differences
+<ul>
+<li>file://</li>
+<li>git://</li>
+<li>git+ssh://</li>
+<li>http://</li>
+<li>https://</li>
+<li>Resulting repo is the same, no matter the protocol</li>
+</ul></li>
+</ul>
+
+<h1>[#A] Branching Concepts</h1>
+
+<ul>
+<li>Branches are cheap: 40 hex chars
+<ul>
+<li>Files in <code>.git/refs</code></li>
+</ul></li>
+<li>Used to contain experiments, stories, and features.</li>
+<li>Branches begin life locally and are only published as requested
+<ul>
+<li>This makes branches suitable for experiments</li>
+</ul></li>
+</ul>
+
+<h1>[#A] Basic Branching Mechanics</h1>
+
+<ul>
+<li>TODO Creating branches for later
+<ul>
+<li>git branch <BRANCHNAME></li>
+</ul></li>
+<li>Creating branches for immediate use
+<ul>
+<li>git checkout -b <BRANCHNAME></li>
+</ul></li>
+<li>Deleting
+<ul>
+<li><code>git branch -D &lt;BRANCHNAME&gt;</code></li>
+<li><code>git branch -d &lt;BRANCHNAME&gt;</code></li>
+</ul></li>
+</ul>
+
+<h1>[#A] Reset</h1>
+
+<ul>
+<li>Affects the index, possibly the current branch HEAD, and potentially working directory</li>
+<li>git reset --hard
+<ul>
+<li>Discard working directory and index</li>
+<li>Defaults to HEAD</li>
+<li><code>git reset --hard HEAD</code></li>
+<li><code>git reset --hard</code></li>
+</ul></li>
+<li>git reset --soft
+<ul>
+<li>Destroy history, but leave working directory and stash the same</li>
+<li>Permits a re-commit</li>
+<li><code>git reset --soft HEAD~1</code></li>
+</ul></li>
+<li><p>git reset --mixed</p>
+
+<ul>
+<li><code>git reset --mixed</code>
+<h1>[#A] Remote Basics</h1></li>
+</ul></li>
+<li><p>Just bookmarks for URLs</p></li>
+<li>One by default called <code>origin</code></li>
+<li>Add as many as you like
+<ul>
+<li>Very different from centralized version control</li>
+<li><code>git remote add &lt;REMOTENAME&gt; &lt;URL&gt;</code></li>
+<li>Multiple named destinations for code</li>
+</ul></li>
+</ul>
+
+<h1>[#B] Remote Details</h1>
+
+<ul>
+<li>What gets retrieved from a remote?
+<ul>
+<li>Default refspec</li>
+<li>Can address with greater precision with custom editing in .git/config</li>
+</ul></li>
+<li>Editing remotes
+<ul>
+<li>Adding</li>
+<li>Removing</li>
+<li>Renaming</li>
+</ul></li>
+<li>Why are remote branches immutable?
+<ul>
+<li>Local cache</li>
+<li>Like browser cache</li>
+</ul></li>
+</ul>
+
+<h1>[#B] Navigating the Tree</h1>
+
+<ul>
+<li>diff</li>
+<li>ls-tree</li>
+<li>show</li>
+</ul>
+
+<h1>[#B] Git Internals</h1>
+
+<ul>
+<li>Plain Text Config
+<ul>
+<li>.gitconfig</li>
+<li>.git/config</li>
+<li>.git/HEAD</li>
+<li>.git/FETCH<em>HEAD</li>
+<li>.git/COMMIT</em>EDITMSG</li>
+</ul></li>
+<li>Git exposes its internals
+<ul>
+<li>Composed construction</li>
+<li>Porcelain and plumbing</li>
+</ul></li>
+<li>Can discover the data structures
+<ul>
+<li>Git manipulates graphs</li>
+<li>Many git commands just change file pointers in .git</li>
+</ul></li>
+</ul>
+
+<h1>[#A] Network Operations</h1>
+
+<ul>
+<li>Cloning</li>
+<li>Remotes</li>
+<li>Pushing</li>
+<li>Pulling</li>
+<li>Fetching</li>
+</ul>
+
+<h1>[#A] Merging Basics</h1>
+
+<ul>
+<li>Can merge tags, branches and arbitrary hashes
+<ul>
+<li><code>git merge &lt;TAG&gt;</code></li>
+<li><code>git merge &lt;BRANCH&gt;</code></li>
+<li><code>git merge &lt;9fa321e&gt;</code></li>
+</ul></li>
+<li>Outcomes
+<ul>
+<li>"merge made by recursive"</li>
+<li>"fast-forward"</li>
+</ul></li>
+<li><code>git merge &lt;branch&gt;</code></li>
+<li>Which branches are merged?
+<ul>
+<li>git branch --merged</li>
+<li>git branch --no-merged</li>
+</ul></li>
+</ul>
+
+<h1>[#B] Merging Techniques</h1>
+
+<ul>
+<li>Octopus
+<ul>
+<li>Multiple branches at once</li>
+<li>More efficient than sequentially</li>
+</ul></li>
+<li>Strategies
+<ul>
+<li><code>git merge -s ours &lt;BRANCH&gt;</code></li>
+<li><code>-s subtree</code></li>
+<li><code>-s ours</code></li>
+<li>There is no <code>theirs</code></li>
+</ul></li>
+<li>No Commit (Pause)
+<ul>
+<li><code>--no-commit</code></li>
+<li>Only works with recursive</li>
+<li>Fast-forward will still commit (no merge commit)</li>
+</ul></li>
+<li>No Fast-Forward (Merge Commit Forced)
+<ul>
+<li><code>--no-ff</code></li>
+<li>Force a merge commit, even if not needed</li>
+<li>Provides permanent record of merge (and possibly the feature being merged in)</li>
+</ul></li>
+<li>Choosing a side per file
+<ul>
+<li>git checkout --ours <filename></li>
+<li>git checkout --theirs <filename></li>
+</ul></li>
+</ul>
+
+<h1>[#A] Rebasing</h1>
+
+<ul>
+<li>Accomplishes
+<ul>
+<li>Code change clarity</li>
+<li>Multi-commit unification</li>
+<li>History linearity</li>
+<li>Commit message cleanup</li>
+</ul></li>
+<li>Traditional rebase
+<ul>
+<li>Common to put the contents of one branch after the master branch</li>
+<li>git rebase <COMMIT></li>
+</ul></li>
+<li>Interactive rebase
+<ul>
+<li>User-involved rebasing to change order, message, contents</li>
+<li>git rebase -i <COMMIT></li>
+</ul></li>
+<li>Fixup</li>
+<li>Autosquash</li>
+<li>Leaving the merge bubble after rebase
+<ul>
+<li>Keeps visual representation of feature work</li>
+<li><code>merge --no-ff</code></li>
+</ul></li>
+</ul>
+
+<h1>[#B] Diff and Merge Tools (Visual)</h1>
+
+<ul>
+<li>Difftool
+<ul>
+<li><code>git difftool &lt;REF1&gt; &lt;REF2&gt;</code></li>
+<li>For staged and unstaged changes</li>
+<li>Diffing arbitrary branches</li>
+<li>Doesn't require any specific "state"</li>
+</ul></li>
+<li>Mergetool
+<ul>
+<li><code>git mergetool</code></li>
+<li>For merge conflicts</li>
+<li>Requires merge conflict to activate</li>
+</ul></li>
+<li>Configuration in .gitconfig</li>
+<li>Selection at CLI
+<ul>
+<li><code>git difftool -t araxis</code></li>
+<li><code>git mergetool -t araxis</code></li>
+<li><code>git difftool -t opendiff</code></li>
+</ul></li>
+<li>Default supported tools
+<ul>
+<li><code>git help difftool</code></li>
+<li>P4Merge</li>
+<li>OpenDiff</li>
+<li>VimDiff</li>
+<li>Araxis</li>
+<li>BeyondCompare</li>
+<li>Anything that accepts command line parameters</li>
+</ul></li>
+</ul>
+
+<h1>[#A] History Modification</h1>
+
+<ul>
+<li>Reset</li>
+<li>Amend</li>
+<li>Rebase</li>
+<li>Reflog</li>
+</ul>
+
+<h1>[#B] Workflows</h1>
+
+<ul>
+<li>Offline sharing</li>
+<li>Pushing and pulling</li>
+<li>Commander, lieutenant and soldier</li>
+<li>Centralized</li>
+</ul>
+
+<h1>[#C] Dev Tool &amp; IDE Git Integration</h1>
+
+<ul>
+<li>Eclipse</li>
+<li>IntelliJ</li>
+<li>TextMate</li>
+<li>Emacs</li>
+<li>Vim</li>
+<li>Visual Studio</li>
+</ul>
+
+<h1>[#C] Web Tools</h1>
+
+<ul>
+<li>git instaweb</li>
+<li>viewvc</li>
+<li>bananajour</li>
+</ul>
+
+<h1>[#C] Repo Hosting</h1>
+
+<ul>
+<li>Web tools</li>
+<li>Gitolite</li>
+<li>Gitorious</li>
+<li><p>GitHub:Enterprise</p></li>
+<li><p>Git hosting</p></li>
+</ul>
+
+<h1>[#B] Refspecs</h1>
+
+<ul>
+<li>Control what is pulled</li>
+<li>Control what is pushed</li>
+<li>Notes</li>
+<li>Tags</li>
+</ul>
+
+<h1>[#B] Precision Actions</h1>
+
+<ul>
+<li>Merging a single file
+<ul>
+<li>git checkout </li>
+</ul></li>
+<li>Displaying a file at a certain point in time
+<ul>
+<li>git show TREEISH:filename</li>
+</ul></li>
+</ul>
+
+<h1>[#B] Broad Actions</h1>
+
+<ul>
+<li>Logging ranges
+<ul>
+<li>git log SINCE..TO</li>
+</ul></li>
+<li>Diffing arbitrary hashes
+<ul>
+<li>git diff ANYFROM ANYTO</li>
+</ul></li>
+</ul>
+
+<h1>[#B] Branching Strategies</h1>
+
+<ul>
+<li>What code belongs where?</li>
+<li>Good branching
+<ul>
+<li>Small</li>
+<li>Quickly merged</li>
+<li>Well named</li>
+</ul></li>
+<li>Branch lifetimes
+<ul>
+<li>Long lived branches</li>
+<li>Integration branches</li>
+<li>Short lived (topic) branches</li>
+</ul></li>
+<li>Naming conventions
+<ul>
+<li>Slashes in the name?</li>
+<li>Usernames in the branch name (like the git project)</li>
+<li>ls-remote becomes more helpful</li>
+</ul></li>
+<li>Merge and rebase techniques from the field</li>
+</ul>
+
+<h1>[#B] GitHub</h1>
+
+<ul>
+<li>Hosted Git repos</li>
+</ul>
+
+<h1>[#C] Hashing Examples In The Real World</h1>
+
+<ul>
+<li>Names (3 letters + 1) on United screens</li>
+<li>First letter plus last on bulletins</li>
+<li>Trying to make a unique thing out of a non unique or large thing (full name)</li>
+<li>Trying to obscure the data but still offer a unique fingerprint</li>
+</ul>
+
+<h1>[#B] Eclipse</h1>
+
+<ul>
+<li>JGit</li>
+<li>EGit</li>
+<li>New 1.2 feautures such as patch mode staging</li>
+<li>Gists</li>
+</ul>
+
+<h1>[#B] End of Class Q&amp;A</h1>
+
+<ul>
+<li>Tooling suggestions?</li>
+<li>Branch strategies?</li>
+<li>Git repo hosting?</li>
+<li>Git backup strategies?</li>
+<li>Getting code off developer laptops</li>
+<li>How to handle hooks</li>
+<li>Using GitHub</li>
+</ul>
