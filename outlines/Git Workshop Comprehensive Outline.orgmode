@@ -76,18 +76,42 @@ We can create repos even before we configure Git
 **** safecrlf
 ** [#A] Adding and Commiting Basics
 *** Add
+Add can use specific filenames or wildcards. Add uses glob pattern matching.
 **** `git add <FILENAME>`
+The most specific
 **** `git add <PATTERN>`
+A subset of the files
 **** `git add *.html`
+Just the HTML files
 **** `git add src/`
+The src directory
 **** `git add .`
+Everything in this directory and recursively beneath it
 **** Interactive selection of code
+More than just file level precision is available in Git. Hunks within files can be chosen in the interactive modes of some commands.
 ***** `git add -p`
 *** Commit
-**** Making code a permanent part of history
+Makes staged code a permanent part of history
 **** `git commit -m"message here"`
-**** Writing a commit to the .git/objects directory
+Writes a commit to the .git/objects directory
 
+** [#A] History Viewing Basics
+*** ==git log==
+Lists all history in reverse chronological order
+*** ==git log -3==
+Just the last three entries
+*** ==git log --stat==
+Show filenames
+*** ==git log -p==
+Show contents (patch format) of historical changes
+
+** [#B] Advanced History
+*** ==git log --diff-filter=M==
+Only files that are modified. Can also use D, R, A for other modes of files
+*** ==git log --author=Matthew==
+Substring match
+*** ==git log --pretty=oneline --graph --decorate --abbrev-commit --all==
+Show all history in a graph, decorated with branch names, shorten the commit refs to 7 characters, and show all branches, not just ones that are merged into this one.
 ** [#B] Three Stage Thinking
 *** Why Git has three trees
 **** Working Directory (File System)
@@ -259,18 +283,19 @@ We can create repos even before we configure Git
 *** Fetching
 
 ** [#A] Merging Basics
-*** Can merge tags, branches and arbitrary hashes
+*** Merge tags, branches and arbitrary hashes
 **** `git merge <TAG>`
 **** `git merge <BRANCH>`
 **** `git merge <9fa321e>`
 *** Outcomes
 **** "merge made by recursive"
 **** "fast-forward"
-*** `git merge <branch>`
-*** Which branches are merged?
-**** git branch --merged
-**** git branch --no-merged
-
+*** Query Branch Merge Status
+**** ==git branch --merged==
+Which branches are merged?
+**** ==git branch --no-merged==
+Which branches are not merged into this one?
+     
 ** [#B] Merging Techniques
 *** Octopus
 **** Multiple branches at once
@@ -292,20 +317,40 @@ We can create repos even before we configure Git
 **** git checkout --ours <filename>
 **** git checkout --theirs <filename>
 
-** [#A] Rebasing
-*** Accomplishes
+** [#A] Rebasing On A Branch
+*** History Rewriting for Clarity
 **** Code change clarity
 **** Multi-commit unification
 **** History linearity
 **** Commit message cleanup
 *** Traditional rebase
 **** Common to put the contents of one branch after the master branch
-**** git rebase <COMMIT>
-*** Interactive rebase
-**** User-involved rebasing to change order, message, contents
-**** git rebase -i <COMMIT>
+**** ==git rebase <COMMIT>==
+Rebases the current branch as if it branched from the <COMMIT> specified
+
+** [#B] Interactive Rebase
+User-involved rebasing to change order, message, contents
+*** Functions
+**** Reword
+**** Squash
+**** Omit
+**** Edit
+*** Executing an Interactive Rebase
+**** ==git rebase -i <COMMIT>==
+**** ==git rebase --continue==
+**** ==git rebase --skip==
+**** Never commit while in a rebase (will orphan the commit)
+
+** [#C] Automatic Rebase 
 *** Fixup
 *** Autosquash
+
+** [#B] Rebase Impacts
+*** Hashses have changed
+*** Might have to force push
+**** Repercussions to team
+**** Is this ever viable?
+**** Git project rebases PU branch all the time
 *** Leaving the merge bubble after rebase
 **** Keeps visual representation of feature work
 **** `merge --no-ff`
@@ -335,10 +380,25 @@ We can create repos even before we configure Git
 **** Anything that accepts command line parameters
 
 ** [#A] History Modification
+Git permits history to be modified in a variety of ways. This is a sharp tool, but extremely useful in the hands of proficient developers.
 *** Reset
+Change the staging area and the commit graph.
+**** ==git reset --hard==
+**** ==git reset --hard HEAD==
+Reset all tracked and staged files to the last committed state
+**** ==git reset --soft HEAD~1
+Redo the last commit. Put all committed files back in
 *** Amend
+**** ==git commit --amend==
+Redo the last commit. Can have files modified, then staged or added then staged, or removed then staged that will be part of this re-done commit.
+**** Caution should be employed for any pushed commits because the commit hash has been re-calculated 
 *** Rebase
+Replay existing commits. Possibly interactively.
 *** Reflog
+**** ==git reflog==
+Show the local journal of changes to your repo
+**** ==git reset --hard <REF>==
+Restore to a commit from your reflog
 
 ** [#B] Workflows
 *** Offline sharing
@@ -476,7 +536,9 @@ Many Git workshops successfully focus on the basics for those new to DVCS. Howev
 **** Can be picked from anywhere
 *** Interactively rebase and edit on the desired commit
 **** Amend that commit
+==git commit --amend==
 **** Rebase continue
+==git rebase --continue==
 
 ** [#B] Building custom commands via aliases and shell scripts.
 *** gc_recursive
@@ -491,19 +553,25 @@ Many Git workshops successfully focus on the basics for those new to DVCS. Howev
 **** Soft
 **** Hard
 
-** [#A] Minimizing repetitive work with rerere, pickaxe, and bisect.
+** [#A] Minimizing repetitive work with rerere
+*** Uses
+**** Reuse Recorded Resolution
+**** Memorizes conflict resolution.
+**** Local only. Not portable. Saves to rerere log file.
 *** Turn on rerere
-**** Merge twice on the same information
 **** git config --global rerere.enabled "1"
+*** Test rerere
+**** Merge twice on the same information
+*** Inquiry on rerere status
 **** git rerere status
 **** git rerere diff
-*** Logging
-**** git log -S "STRING"
-**** git log -G "regex"
-**** git log --grep "<PATTERN>"
-**** git log --follow FILENAME
-**** git log --follow REF:FILENAME
-**** git log -p -S "option = options[0];" --diff-filter=D
+** [#A] Advanced History Searches
+*** git log -S "STRING"
+*** git log -G "regex"
+*** git log --grep "<PATTERN>"
+*** git log --follow FILENAME
+*** git log --follow REF:FILENAME
+*** git log -p -S "option = options[0];" --diff-filter=D
 *** Listing specifics
 **** Untracked files:
 **** git ls-files . --exclude-standard --others
@@ -526,3 +594,8 @@ Many Git workshops successfully focus on the basics for those new to DVCS. Howev
 ***** fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
 ***** squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
 ***** ri = rebase --interactive --autosquash
+
+* To Be Integrated
+** git cherry
+** git rebase --onto
+

@@ -6,13 +6,13 @@ To test your git installation, type:
 
 * DONE Create repos
 * DONE Commit some code
-* Select invidual files
-* Wild card staging
-* Select by line
-* History
-* Maintainance
-* Merges
-* Rebase
-* Re-writing history amends, rebase, rebase -i
+* DONE Select invidual files
+* DONE Wild card staging
+* DONE Select by line
+* DONE History
+* DONE Maintainance
+* DONE Merges
+* DONE Rebase
+* DONE Re-writing history amends, rebase, rebase -i
 
 https://github.com/matthewmccullough/git-workshop
