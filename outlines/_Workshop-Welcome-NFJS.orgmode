@@ -1,10 +1,11 @@
 Binaries for git are on the NFJS USB stick in the git workshop folder in a ZIP in a `tools` subfolder of the unpacked zip.
 
+* DONE Test Git
 To test your git installation, type:
   git --version
 
-* Create repos
-* Commit some code
+* DONE Create repos
+* DONE Commit some code
 * Select invidual files
 * Wild card staging
 * Select by line
