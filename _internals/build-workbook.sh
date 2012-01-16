@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pushd workbook
+pushd ../workbook
 
 echo Cleaning up old PDFs
 rm pdfs/*.pdf
