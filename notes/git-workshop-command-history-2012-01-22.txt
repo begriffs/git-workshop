@@ -1,0 +1,826 @@
+*  git --version
+*  git add .
+*  git push
+*  git init .
+*  touch newfile
+*  git add -N newfile
+*  echo stuff >> anotherfile
+*  git add -N anotherfile
+*  git status
+*  git diff --cached anotherfile
+*  git diff anotherfile
+*  cd hellogitworld1
+*  git reset --hard 2956e
+*  git checkout feature_division
+*  git cherry-pick -x 333fd9b
+*  git s
+*  git diff
+*  git mergetool
+*  git branch side
+*  git add .
+*  generaterandomchanges 4 sample txt
+*  cat sample4.txt
+*  git checkout side
+*  git s
+*  git checkout master
+*  git branch side2 HEAD~2
+*  git checkout side2
+*  mate sample1.txt
+*  git commit -a -m"side change"
+*  git cherry-pick -x ef334
+*  git s
+*  git checkout master
+*  git merge side2
+*  git lpo
+*  git show HEAD
+*  git log --format=raw -p
+*  git log --format=raw -p -1
+*  git show master
+*  git merge side2
+*  git lpo
+*  cat sample1.txt
+*  git log --format=raw -p -1
+*  git checkout side2
+*  git cherry ef33
+*  git checkout master
+*  generaterandomchanges 2 test txt
+*  git checkout side2
+*  git cherry 9477b
+*  git cherry 29dfbe
+*  git cherry -v  29dfbe
+*  git cherry-pick 29dfbe
+*  git reset
+*  cd hellogitworld2
+*  git remote show origin
+*  git remote update -p origin
+*  git fetch origin
+*  git commit -a -m"More notes"
+*  git log
+*  git rebase -i 92a586
+*  git rebase --abort
+*  git rebase -i 92a586
+*  git push -f
+*  rm -rf hellogitworld*
+*  rm -rf test1
+*  git tag -s TEST
+*  git tag -s TEST
+*  gpg --list-keys
+*  gpg --gen-key
+*  git tag -s TEST
+*  gpg --gen-key
+*  git tag -s TEST
+*  git tag
+*  git tag -v
+*  git tag -v TEST
+*  git s
+*  git diff
+*  git remote -v
+*  git push --mirror origin
+*  git branch matthew1
+*  git push origin matthew1
+*  git --version
+*  ps -aef | grep git
+*  cd ..
+*  git init project1
+*  mkdir existingproject
+*  cd existingproject
+*  touch sourcecode.java
+*  git init
+*  cd ..
+*  cd project1
+*  ls -al
+*  git status
+*  git config --list
+*  git config --list | more
+*  vim ~/.gitconfig
+*  git config --local user.name "Matthew Boston McCullough"
+*  git config user.name 
+*  cat .git/config
+*  vim first.groovy
+*  git status
+*  git add .
+*  git status
+*  git commit -m"First commit"
+*  vim first.groovy
+*  git status
+*  git add first.groovy
+*  git status
+*  vim first.groovy
+*  git status
+*  open .git
+*  touch second.groovy
+*  touch third.groovy
+*  git status
+*  git add second.groovy
+*  git status
+*  git commit -m"Second commit"
+*  git status
+*  git add third.groovy
+*  git status
+*  git commit -m"Third file"
+*  git status
+*  git commit -a -m"All the mods"
+*  ssh git@github.com
+*  ssh -T git@github.com
+*  ssh -vv git@github.com
+*  echo //HI >> third.groovy
+*  git status
+*  git add .
+*  git commit 
+*  git config core.editor
+*  git config --local core.editor
+*  git config --system core.editor
+*  git config --global core.editor
+*  git status
+*  git commit -a -m"Neutral state"
+*  git status
+*  vim first.groovy
+*  git status
+*  git diff
+*  git add first.groovy
+*  git diff
+*  git status
+*  vim first.groovy
+*  git status
+*  git diff
+*  git diff --staged
+*  git diff HEAD
+*  git diff --color-words
+*  git diff --color-words --staged
+*  git diff --word-diff 
+*  git diff --word-diff  --staged
+*  git log
+*  git log --stat
+*  git log --stat -p
+*  git l2
+*  git log --pretty=fuller
+*  git log 
+*  git status
+*  git commit -a -m"Save this"
+*  git status
+*  touch build.log
+*  touch build.tmp
+*  mkdir output
+*  touch output/other.log
+*  touch .gitignore
+*  mate .gitignore
+*  git status
+*  git add .gitignore
+*  git commit -m"Top level ignores"
+*  git status
+*  cd output
+*  touch output.temp
+*  git status 
+*  git status -u
+*  mate .gitignore
+*  git status
+*  ls
+*  git add .
+*  git status
+*  ls -al
+*  git add output.temp
+*  git add -f output.temp
+*  mate ~/.gitconfig
+*  touch special.log
+*  git status
+*  git commit -a -m"Ignores"
+*  mate .gitignore
+*  git status
+*  git add .gitignore
+*  git commit -m"Not ignoring special log"
+*  git add .
+*  git commit -m"Tracking log file due to rule 1794"
+*  git config core.excludesfile
+*  mate ~/.gitignore
+*  git status
+*  cd ..
+*  ls
+*  git rm first.groovy 
+*  git status
+*  rm second.groovy
+*  git status
+*  git rm second.groovy
+*  git status
+*  rm third.groovy
+*  git status
+*  git add -u .
+*  git status
+*  git reset --hard
+*  git status
+*  mv first.groovy firstredux.groovy
+*  git status
+*  git mv second.groovy secondredux.groovy
+*  git status
+*  git add -A .
+*  git status
+*  mv third.groovy thirdredux.groovy
+*  cat thirdredux.groovy
+*  git add -A .
+*  git status
+*  git commit -m"Renamed them all"
+*  vim firstredux.groovy
+*  mv firstredux.groovy firstagain.groovy
+*  git status
+*  git add -A .
+*  git status
+*  git commit -m"Renamed it with changes"
+*  git status
+*  git log --stat -2
+*  git log --stat -2 -M
+*  git log -- firstagain.groovy
+*  git log --follow -- firstagain.groovy
+*  git log --stat --follow -- firstagain.groovy 
+*  git status
+*  ls
+*  git rm firstagain.groovy
+*  git commit -m"Removing first"
+*  git checkout HEAD~1 -- firstagain.groovy
+*  mv firstagain.groovy matthewresurrected.groovy
+*  git add .
+*  git status
+*  git add -A .
+*  git commit -m"Back again"
+*  git log --stat -2
+*  git log --stat -3 -M --follow matthewresurrected.groovy
+*  git log --stat -3 -M --find-copies-harder --follow matthewresurrected.groovy
+*  git checkout REV_01 firstagain.groovy
+*  git checkout HEAD firstagain.groovy
+*  git checkout HEAD matthewresurrected.groovy
+*  git checkout HEAD -- matthewresurrected.groovy
+*  vim fifth.groovy
+*  git add .
+*  cp fifth.groovy sixth.groovy
+*  vim sixth.groovy
+*  git add .
+*  git commit -"both"
+*  git commit -m"both"
+*  mate *.groovy
+*  git status
+*  git config --local user.name "Matt New"
+*  git commit -a -m"Moved code"
+*  git blame sixth.groovy
+*  git blame -C sixth.groovy
+*  cd ..
+*  cd hellogitworld
+*  git status
+*  ls
+*  cd ..
+*  cd project1
+*  cp secondredux.groovy seventh.groovy
+*  git add .
+*  git commit -m"Copied"
+*  git log --stat -2
+*  ls
+*  cat seventh.groovy
+*  cp sixth.groovy eihth.groovy
+*  git add .
+*  git commit -m"Copied again"
+*  git log --stat -2
+*  git log --stat -2 -M
+*  git log --stat -2 -C
+*  git log --stat -2 -C --find-copies-harder
+*  git blame seventh.groovy
+*  git blame eihth.groovy
+*  to.code.opensource
+*  cd Git
+*  cd git_git
+*  ls
+*  git blame progress.
+*  git blame progress.c
+*  git status
+*  git branch feature99
+*  vim secondredux.groovy
+*  vim eihth.groovy
+*  git commit -a -m"Fixes on mainline"
+*  git checkout feature99
+*  vim eihth.groovy
+*  mv eihth.groovy eighth.groovy
+*  git add -A .
+*  git status
+*  git commit -m"Feature work and name fix"
+*  git checkout master
+*  git merge feature99
+*  cat eighth.groovy
+*  git config alias.servehere
+*  cd ..
+*  rm -rf hellogitworld
+*  git clone https://githubstudents:students987@github.com/githubstudents/hellogitworld.git
+*  cd hellogitworld
+*  git branch
+*  git branch -a
+*  git status
+*  git branch matthewmccullough
+*  git status
+*  git checkout matthewmccullough
+*  git branch -a
+*  git branch 
+*  git checkout master
+*  git branch matthew1
+*  git remote show origin
+*  git checkout matthewmccullough
+*  vim src/Sum.groovy
+*  git status
+*  git checkout master
+*  git checkout matthewmccullough -- src/Sum.groovy
+*  git status
+*  git checkout matthewmccullough 
+*  vim src/Sum.groovy
+*  git commit -a -m"My change"
+*  git push -u origin matthewmccullough
+*  mate .git/config
+*  git fetch
+*  git branch 
+*  git branch -r
+*  git branch -a
+*  git checkout wangke
+*  git checkout matthewmccullough
+*  git fetch
+*  git log matthewmccullough..origin/matthewmccullough
+*  git diff origin/matthewmccullough
+*  git merge origin/matthewmccullough
+*  vim matthewmccullough.txt
+*  git add .
+*  git commit -m"Matthews commit"
+*  git push
+*  git pull
+*  git push
+*  git pull
+*  git push
+*  git pull
+*  git push
+*  git push;git pull;git push
+*  git log --graph --abbrev-commit --decorate --all --pretty=oneline
+*  git config --global alias.bbnl "log --graph --abbrev-commit --decorate --all --pretty=oneline"
+*  git bbnl
+*  git pull origin +matthewmccullough:matthewmccullough
+*  git pull origin +master:master
+*  git remote -v
+*  git remote add another https://githubstudents:students987@github.com/githubstudents/hellogitworld.git
+*  git fetch another
+*  git branch -a | more
+*  git fetch origin
+*  git log origin/matthewmccullough another/matthewmccullough
+*  git merge origin/matthewmccullough
+*  git rev-parse matthewmccullough
+*  git rev-parse origin/matthewmccullough
+*  git rev-parse another/matthewmccullough
+*  git push
+*  git pull
+*  git push
+*  git rev-parse matthewmccullough
+*  git rev-parse origin/matthewmccullough
+*  git rev-parse another/matthewmccullough
+*  git remote show origin
+*  cd ..
+*  cp -r hellogitworld hellogitworldDAMAGED
+*  cd hellogitworldDAMAGED
+*  git rev-parse HEAD
+*  vim .git/objects/1a/1417386a870f146a907634f2e5a0c89b464f53
+*  touch newfile
+*  git add .
+*  git commit -m"New file"
+*  git fsck
+*  cd ..
+*  cd hellogitworld
+*  git rev-parse HEAD
+*  vim .git/refs/heads/manualbranch
+*  git branch
+*  git log -4
+*  git branch iwishihad c1c2ed94a2e6465d5d4d090c84df9e61360aab4a
+*  git tag AGOODPOINT c1c2ed94a2e6465d5d4d090c84df9e61360aab4a
+*  echo //STUFF >> rolandmandler.txt
+*  echo //STUFF >> matthewmccullough.txt
+*  git diff
+*  git add matthewmccullough.txt
+*  git stash
+*  vim matthewmccullough.txt
+*  git commit -a -m"Change"
+*  git stash pop
+*  cat matthewmccullough.txt
+*  git stash
+*  git stash list
+*  git checkout master
+*  git checkout -b  matthewmccullough2
+*  ls
+*  vim README.txt
+*  git commit -a -m"QUick to fast"
+*  git checkout master
+*  vim README.txt
+*  git commit -a -m"Mainline change"
+*  git merge matthewmccullough2
+*  cat README.txt
+*  git mergetool -t p4merge
+*  git status
+*  git commit 
+*  git branch rebasedemo
+*  generaterandomchanges 2 sample txt
+*  git checkout rebasedemo
+*  generaterandomchanges 2 rebase txt
+*  git bbnl -5
+*  gitk --all&
+*  git rebase master
+*  git bbnl -5
+*  git reflog
+*  git checkout master
+*  git branch mergedemo
+*  generaterandomchanges 2 mainline txt
+*  git checkout mergedemo
+*  generaterandomchanges 2 sideline txt
+*  git checkout master
+*  generaterandomchanges 2 mainline txt
+*  git checkout mergedemo
+*  generaterandomchanges 2 sideline txt
+*  git lpo -10
+*  git checkout master
+*  git merge mergedemo
+*  git lpo -9
+*  git reset --hard HEAD~1
+*  git checkout mergedemo
+*  git rebase master
+*  git lpo -9
+*  git revert 74cb209
+*  echo HI  >> README.txt
+*  git stash
+*  git reset --hard
+*  git s
+*  echo HI  >> README.txt
+*  git stash
+*  echo MORE  >> README.txt
+*  git stash
+*  git stash list
+*  git stash pop
+*  git stash list
+*  git stash pop
+*  git mergetool
+*  git status
+*  git difftool HEAD stash@{0}
+*  git log --stat --find-copies-harder | grep "(=>)|(commit)"
+*  git log -1 --pretty=raw 
+*  git show 4939bd
+*  git show 
+*  git cat-file 4939db
+*  git cat-file -p 4939db
+*  git cat-file -t 4939bd
+*  git cat-file -p 4939bd
+*  git cat-file -t HEAD
+*  git cat-file -p HEAD
+*  git tag
+*  git show RELEASE_1.0
+*  git tag -a RELEASE_1.0 RELEASE_1.0.1
+*  git tag -a RELEASE_1.0.0 RELEASE_1.0
+*  git show RELEASE_1.0.0
+*  git --version
+*  pwd
+*  git diff
+*  git push
+*  git cat-file -p RELEASE_1.0.0
+*  git cat-file -p 2a52e96389d02209b451ae1ddf45d645b42d744c
+*  git cat-file -p bcda130735466e97ca68498a8ba6efd66ccf7f37
+*  git cat-file 5241a7220a93c9db3e5d0cb642586fd917393c39
+*  git cat-file -p 5241a7220a93c9db3e5d0cb642586fd917393c39
+*  git cat-file -s 5241a7220a93c9db3e5d0cb642586fd917393c39
+*  git rev-list
+*  git rev-list HEAD
+*  for eachthing in `git rev-list HEAD --all`; do echo `git cat-file -s $eachthing` $eachthing ; done
+*  mate ~/.gitconfig
+*  git sizes
+*  git rev-list
+*  git rev-list --all
+*  git rev-list --all -t
+*  git rev-list --all | git cat-file --batch-check
+*  git rev-list --all | git cat-file --batch-check
+*  git size
+*  git sizes
+*  git diff -p emptytree src
+*  git diff emptytreehash
+*  git diffemptytreehash gitweb
+*  git diff --name-status
+*  git diff --name-status HEAD~1
+*  git diff --name-status HEAD~1
+*  git diff --name-status HEAD~1 -r
+*  git diff -r --name-status HEAD~1 
+*  git diff --stat HEAD~1 -r
+*  git diff --stat HEAD~1 
+*  git servedotgits
+*  mv hellogitworld hellogitworldgithub
+*  git clone git://localhost/hellogitworld
+*  git clone git://localhost/hellogitworld/.git
+*  git clone git://localhost/hellogitworld.git
+*  git clone git://localhost/hellogitworld/.git
+*  git clone git://localhost/testbisect.git
+*  git clone git://localhost/testbisect
+*  git clone git://localhost/testbisect/.git
+*  git servedotgits
+*  git branch one
+*  git branch two
+*  git checkout one
+*  generaterandomchanges 10 sample txt
+*  git checkout two
+*  generaterandomchanges 10 sample txt
+*  git merge one
+*  git edit-unmerged
+*  git s
+*  echo $EDITOR
+*  git edit-unmerged
+*  git addconflicted
+*  git commit -m"Done"
+*  git lpo -9
+*  git lpo -20
+*  git lpo -25
+*  git merge-base 
+*  git merge-base one
+*  git merge-base one two
+*  git merge-base two one
+*  git reset --hard HEAD~1
+*  git merge-base two one
+*  git ls-remote origin
+*  vimdiff
+*  brew install exiftool
+*  git show-branch
+*  git show-branch one two
+*  git show-branch 
+*  git lpo -20
+*  git show-branch
+*  git checkout master
+*  git show-branch --topics master one two
+*  git merge one~6
+*  git merge two~4
+*  git add .
+*  git commit -m"Done"
+*  git show-branch --topics master one two
+*  git-multipush origin origin
+*  git remote -v
+*  git remote add another git@github.com:matthewmccullough/hellogitworld.git
+*  git-multipush origin another
+*  git-sh
+*  git wtf
+*  git branch -a
+*  git checkout feature_image
+*  git wtf
+*  generaterandomchanges 2 sample txt
+*  git wtf
+*  echo stuff >> README.txt
+*  git undo 2
+*  git s
+*  git log -2
+*  git undo 2
+*  git log -2
+*  git summary
+*  git-flow init
+*  git-flow
+*  git log -2
+*  git cat-file 2a52e96389d02209b451ae1ddf45d645b42d744c
+*  git cat-file -t 2a52e96389d02209b451ae1ddf45d645b42d744c
+*  git cat-file -p 2a52e96389d02209b451ae1ddf45d645b42d744c
+*  git cat-file -t bcda1307354
+*  git cat-file -p bcda1307354
+*  open .git
+*  git cat-file -t 1e24b564bf2298965d8037af42d3ae15ad7d225a
+*  git cat-file -p 1e24b564bf2298965d8037af42d3ae15ad7d225a
+*  git cat-file -s 1e24b564bf2298965d8037af42d3ae15ad7d225a
+*  git tag PLAIN HEAD
+*  git tag -a ANNO HEAD
+*  git cat-file -t ANNO
+*  git cat-file -t PLAIN
+*  git cat-file -p PLAIN
+*  git cat-file -p ANNO
+*  git tag -g SIGNED HEAD
+*  git tag -s SIGNED HEAD
+*  git show-branch
+*  git merge two~6
+*  git show-branch
+*  git checkout one
+*  git merge feature_image
+*  git add .
+*  git commit 
+*  git show-branch
+*  git ls-remote
+*  git rebase master
+*  git rebase --skip
+*  git reglog
+*  git reflog
+*  git tag DDATE_REBASING_BEFORE 5347166
+*  gitk --all&
+*  git config --global alias.bbnclean "clean -ndX"
+*  git bbnclean
+*  touch build.log
+*  git status
+*  vim .gitignore
+*  git status
+*  git bbnclean
+*  git l2
+*  git reset --soft HEAD~1
+*  git status
+*  git add .
+*  git commit -C 4bfbf88bf248c4107f506c0aa8b353def323c876
+*  to.code.opensource
+*  cd Git/git_git
+*  git pull
+*  git shortlog --since=one.day.ago
+*  git shortlog --since=one.week.ago
+*  git diffemptytreehash HEAD~4
+*  git diffemptytreehash HEAD~4 -- README.txt
+*  git diffemptytreehash HEAD~4 -- zlib.c
+*  git diffemptytreehash HEAD~4 -- zlib.c > ../vendor.patch
+*  git help
+*  git help --all
+*  git summary
+*  git summary | more
+*  git flow 
+*  git flow init
+*  gitnr test1
+*  git flow init
+*  git flow init -f
+*  git flow feature
+*  git wtf
+*  cd ..
+*  cp -r hellogitworldgithub hgw1
+*  cd hellogitworldgithub
+*  git checkout master
+*  git pull
+*  generaterandomchanges 5 sample html
+*  git wtf
+*  cd ..
+*  cd hgw1
+*  generaterandomchanges 2 other html
+*  git push
+*  git checkout master
+*  generaterandomchanges 2 other html
+*  git push origin master
+*  cd ..
+*  cd hellogitworldgithub
+*  git fetch
+*  git wtf
+*  git merge-status
+*  git mergestatus
+*  git show-merges
+*  git branch --merged
+*  git branch --no-merged
+*  git-shell
+*  git-sh
+*  touch newfile
+*  echo HI >> sample2.
+*  echo HI >> sample2.txt
+*  git add .
+*  git commit -m"More stuff"
+*  cd .
+*  mate .git/config
+*  git ls-remote origin
+*  git ls-remote git@github.com:matthewmccullough/hellogitworld.git
+*  git push
+*  git push -f origin
+*  cd ..
+*  git clone ghgm://hellogitworld
+*  cd hellogitworld
+*  mate .git/config
+*  git push origin master:mytempmaster
+*  cd ..
+*  cd hellogitworldgithub
+*  git push origin master:mytempmaster
+*  git push origin master:mytempmaster1
+*  git push origin master:mytempmaster2
+*  git push origin :mytempmaster2
+*  git push --delete origin mytempmaster1
+*  git tag
+*  git push
+*  git push --tags
+*  git fetch another
+*  mate .git/config
+*  git ls-remote origin
+*  git branch 
+*  git branch -a
+*  git branch mm/feature1
+*  git branch js/feature2
+*  git branch js/feature1
+*  git push -u js/feature1
+*  git push -u origin js/feature1
+*  git push -u origin js/feature2
+*  git push -u origin mm/feature1
+*  cd ..
+*  cd hgw1
+*  mate .git/config
+*  git fetch
+*  git branch mm/feature2
+*  git checkout mmm/feature2
+*  git checkout mm/feature2
+*  generaterandomchanges 2 matthew txt
+*  git checkout mm/feature1
+*  generaterandomchanges 2 f1 txt
+*  git checkout master
+*  generaterandomchanges 2 m1 txt
+*  git push origin master
+*  git push origin -u mm/feature1
+*  git push origin -u mm/feature2
+*  git fetch
+*  cd ..
+*  rm -rf hellogitworld
+*  rm -rf hellogitworldgithub
+*  ls
+*  rm -rf hgw1 test1
+*  git clone https://githubstudents:students987@github.com/githubstudents/hellogitworld.git
+*  cd hellogitworld
+*  ls
+*  vim matthewmccullough.txt
+*  git add .
+*  git commit -m"First commit"
+*  git push
+*  git pull --rebase
+*  git log -5 --pretty=oneline
+*  git pull --rebase
+*  git push
+*  git pull --rebase
+*  git push
+*  git pull --rebase
+*  git l2
+*  git show 14d05ba
+*  git pull --rebase
+*  git push
+*  git l2
+*  mate .git/config
+*  git config branch.autosetuprebase always
+*  git branch -d feature_division
+*  git checkout master
+*  git branch -d feature_division
+*  git checkout feature_division
+*  git branch -d feature_division
+*  git checkout master
+*  git branch -d feature_division
+*  git log --pretty=fuller
+*  git tag
+*  to.courses.git
+*  cd local_repo_examples
+*  cd hellogitworld-bare.git
+*  git push --mirror origin
+*  git checkout master
+*  git pull
+*  git pull
+*  git checkout -b matthewmcculloughfeature1
+*  generaterandomchanges 10 rebaseme txt
+*  git l1 -11
+*  git rebase -i log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+*  git l1
+*  git l1 -10
+*  git l1 -11
+*  git rebase -i 2c45172
+*  git reflog -5
+*  git reflog -9
+*  git reflog -15
+*  git l1 -15
+*  cd hellogitworld
+*  git reset --hard 2c45172
+*  git l1 -15
+*  git reflog
+*  git reset --hard 831fd33
+*  git l1 -15
+*  git reflog
+*  git reset --hard 87e076c
+*  open .git
+*  gitk --all&
+*  git log --pretty=raw
+*  git log --pretty=raw --all
+*  git checkout master
+*  git log --pretty=raw --all
+*  git log --all
+*  mate ~/.gitconfig
+*  git l1 -16
+*  git rebase -i 2c45172
+*  git checkout matthewmcculloughfeature1
+*  git rebase -i 2c45172
+*  git rebase --abort
+*  git rev-parse HEAD
+*  git rev-parse matthewmcculloughfeature1
+*  git config rerere.enabled true
+*  git checkout master
+*  git branch conflict
+*  generaterandom changes 2 conflict txt
+*  generaterandomchanges 2 conflict txt
+*  git checkout conflict
+*  generaterandomchanges 2 conflict txt
+*  git checkout master
+*  git merge conflict
+*  git mergetool
+*  git status
+*  git commit
+*  git reset --hard HEAD~1
+*  git checkout conflict
+*  touch onemorefile
+*  git add .
+*  git commit -m"One more"
+*  git checkout master
+*  git merge conflict
+*  git status
+*  cat conflict1.txt
+*  cat conflict2.txt
+*  git ls-files --unmerged
+*  git mergetool
+*  mate ~/.gitconfig
+*  git ls-files --others --ignored --exclude-standard
+*  git rm `git ls-files --others --ignored --exclude-standard`
+*  git log --author=Matthew
+*  git log --author=Matthew --stat
+*  git --no-pager l2 -500
+*  git clean -ndX
+*  git diff --color --diff-filter=R -M master -- 'org.springframework.*' 'spring-*' | egrep -v '^(.){0,7}(diff|similarity|rename)'
+*  git gc --agressive
+*  git gc --aggressive
+*  git show 4325bd2cbece03992a29c6fde2b372d20e9f5676
