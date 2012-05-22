@@ -5,3 +5,6 @@ This course is taught via [GitHub](http://github.com/training/online), [No Fluff
 
 ## Other Git Links
 If you want to explore Git to a maximum depth, I recommend [Scott Chacon's free Git ebook, ProGit](http://progit.org/). I also curate a series of [Git links via Delicious bookmarks](http://www.delicious.com/matthew.mccullough/git).
+
+## Contributions
+Pull requests are welcome. If you see something that needs adjusted, give back to the community and fix it. It feels great and ultimately helps others learn Git. That person you help may one day be your co-worker and you'll be glad you chipped in.
